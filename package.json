@@ -1,0 +1,38 @@
+{
+  "name": "tindux",
+  "version": "1.0.0",
+  "description": "![스크린샷 2020-10-04 오후 8 28 38](https://user-images.githubusercontent.com/65662469/95019310-96881700-069f-11eb-8073-200def5ab5dc.png) ![스크린샷 2020-11-08 오전 1 22 17](https://user-images.githubusercontent.com/65662469/98446451-df306580-2160-11eb-8be4-bd434cf3409c.png) ![스크린샷 2020-10-15 오후 5 12 09](https://user-images.githubusercontent.com/65662469/96095475-968edf00-0f09-11eb-9d11-ebfa0f69b3c1.png)",
+  "main": "./server/index.js",
+  "scripts": {
+    "serve": "node ./server/index.js ",
+    "client": "npm run start --prefix client",
+    "clean": "killall -9 node",
+    "dev": "concurrently \"npm run serve\" \"npm run client\" "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "react-kakao-login": "^2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tulututu/tindux.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tulututu/tindux/issues"
+  },
+  "homepage": "https://github.com/Tulututu/tindux#readme"
+}
