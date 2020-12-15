@@ -1,11 +1,11 @@
-const express = require("express");
+const express = require('express');
 
 //import MongoDB Model
-const User = require("../../../models/User");
+const User = require('../../../models/User');
 
 const router = express.Router();
 
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
   const { gender, age, name, residence, profileImage } = req.body;
   User.findOneAndUpdate(
     { email: req.body.email },
@@ -22,7 +22,7 @@ router.post("/", (req, res) => {
       return res.status(200).send({
         success: true,
       });
-    }
+    },
   );
 });
 module.exports = router;

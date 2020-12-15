@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const config = require("../config");
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const config = require('../config');
 const { SECRET_TOKEN } = config;
 
 const userSchema = mongoose.Schema({
@@ -37,7 +37,7 @@ const userSchema = mongoose.Schema({
   },
   profileImage: {
     type: String,
-    default: "",
+    default: '',
   },
   role: {
     type: Number,
@@ -50,12 +50,12 @@ const userSchema = mongoose.Schema({
   },
 });
 
-userSchema.pre("save", function (next) {
+userSchema.pre('save', function (next) {
   //* =================
   //*  bcrypt 암호화
   //* =================
   var user = this;
-  if (user.isModified("password")) {
+  if (user.isModified('password')) {
     bcrypt.genSalt(10, (err, salt) => {
       if (err) return next(err);
       bcrypt.hash(user.password, salt, (err, hash) => {
@@ -101,12 +101,12 @@ userSchema.statics.findByToken = function (token, callback) {
           console.log(err);
           if (err) return callback(err);
           callback(null, user);
-        }
+        },
       );
     }
   });
 };
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;

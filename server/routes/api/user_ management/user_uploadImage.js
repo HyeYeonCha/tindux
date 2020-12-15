@@ -1,21 +1,21 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const multer = require("multer");
+const multer = require('multer');
 
 // multer-optional
 var storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads/");
+    cb(null, 'uploads/');
   },
   filename: (req, file, cb) => {
     console.log(file);
     cb(null, `${Date.now()}_${file.originalname}.png`);
   },
 });
-var upload = multer({ storage: storage }).single("profile_img");
+var upload = multer({ storage: storage }).single('profile_img');
 
 // Router
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
   upload(req, res, (err) => {
     if (err) {
       return res.json({ success: false, err });

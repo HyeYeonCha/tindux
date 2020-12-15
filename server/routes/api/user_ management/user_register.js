@@ -1,11 +1,11 @@
-const express = require("express");
+const express = require('express');
 
 //const MongoDB Model
-const User = require("../../../models/User");
+const User = require('../../../models/User');
 
 const router = express.Router();
 
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
   console.log(req);
   // User.findOne({ email: req.body.email }, (err, user) => {
   //   if (user) {
